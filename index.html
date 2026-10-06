@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Web of Knowledge | Daily Learning Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- Left: calendar -->
+  <aside id="sidebar" aria-label="Calendar">
+    <div id="cal"></div>
+  </aside>
+  <div id="scrim"></div>
+
+  <div class="content">
+    <!-- Top bar: brand on the left, theme toggle + live clock in the right corner -->
+    <header class="topbar">
+      <button id="menuBtn" class="menu" aria-label="Open calendar">Calendar</button>
+      <div class="brand">
+        <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M20 4v32M4 20h32M8.7 8.7l22.6 22.6M31.3 8.7L8.7 31.3"/>
+            <circle cx="20" cy="20" r="6"/><circle cx="20" cy="20" r="12.5"/>
+          </g>
+        </svg>
+        <div>
+          <h1>✧ ONE PERCENT BETTER EVERYDAY ✧</h1>
+          <small>Daily learning tracker</small>
+        </div>
+      </div>
+      <div class="right">
+        <button id="themeBtn" aria-label="Toggle light and dark mode">Light mode</button>
+        <div class="clock" role="timer" aria-label="Current time">
+          <span id="clockTime">--:--:--</span>
+          <span id="clockDate"></span>
+        </div>
+      </div>
+    </header>
+
+    <nav id="tabs" aria-label="Learning tasks"></nav>
+    <main id="app"></main>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="dlg">
+  <form method="dialog">
+    <h3 id="dlgTitle"></h3>
+    <input id="dlgInput" type="text" autocomplete="off">
+    <div class="actions">
+      <button type="button" id="dlgCancel">Cancel</button>
+      <button value="ok" id="dlgOk" class="primary">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="sum">
+  <div id="sumBody"></div>
+  <div class="actions"><button type="button" id="sumCancel">Back</button><button class="primary" id="sumClose">Close day</button></div>
+</dialog>
+
+<script src="features.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
